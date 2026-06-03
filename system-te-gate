@@ -24,6 +24,10 @@ Patterns that exceed these thresholds are structurally messy and crowd coordinat
 
 TE8. TP REACHED?: Price must NOT have already reached, touched, or exceeded the measured move target. If TP has been touched, reached, or exceeded, the trade opportunity is gone. — REJECT.
 
+TE9. PUMP CHECK (6d8hr): Measure the percentage gain from the 6d8hr mark (counting back from the tip of the ascending triangle) to the tip of the ascending triangle. If the percentage gain is less than 18% — REJECT. A move of less than 18% over this window indicates insufficient momentum leading into the pattern.
+
+TE10. FIRST OCCURRENCE: Is this the first ever occurrence of this setup on this ticker? (yes/no) No filter currently applied — field is recorded for tracking purposes only.
+
 EVALUATION INSTRUCTIONS:
 - Be strict. When in doubt, REJECT.
 - False negatives (missing a trade) are far less costly than false positives (entering a bad trade).
@@ -44,5 +48,7 @@ Setup Context: [N/A]
 Setup Type: [N/A]
 Pattern Quality: [pass/fail/N/A - reason]
 TP Reached?: [pass/fail - reason]
+Pump check (6d8hr): [pass/fail - reason]
+First occurrence: [N/A - recorded]
 
 Overall: [1-2 sentence summary of decision]
