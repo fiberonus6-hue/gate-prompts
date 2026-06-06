@@ -10,7 +10,7 @@ TE3. VOLUME: 24hr Binance Futures volume must be >= $100M. Below this threshold 
 
 TE4. DAYS SINCE TOKEN LAUNCH: No requirement — N/A.
 
-TE5. SETUP CONTEXT: No requirement — N/A.
+TE5. SETUP CONTEXT: If Setup Context is ATH — REJECT. All other contexts are allowed.
 
 TE6. SETUP TYPE: No filter currently applied.
 
@@ -28,6 +28,8 @@ TE9. PUMP CHECK (6d8hr): Measure the percentage gain from the 6d8hr mark (counti
 
 TE10. FIRST OCCURRENCE: Is this the first ever occurrence of this setup on this ticker? (yes/no) No filter currently applied — field is recorded for tracking purposes only.
 
+TE11. WITHIN LARGER ASC TR UPTREND: Is the setup occurring within the uptrend of a larger 30-100d+ ascending triangle? If yes — REJECT. The 3d ascending triangle is forming within an uptrend of a larger structure and so the downside momentum won't be as strong.
+
 EVALUATION INSTRUCTIONS:
 - Be strict. When in doubt, REJECT.
 - False negatives (missing a trade) are far less costly than false positives (entering a bad trade).
@@ -44,11 +46,12 @@ Pattern type: [pass/fail - reason]
 Pattern duration: [pass/fail - reason]
 Volume: [pass/fail - reason]
 Days since token launch: [N/A]
-Setup Context: [N/A]
+Setup Context: [pass/fail - reason]
 Setup Type: [N/A]
 Pattern Quality: [pass/fail/N/A - reason]
 TP Reached?: [pass/fail - reason]
 Pump check (6d8hr): [pass/fail - reason]
 First occurrence: [N/A - recorded]
+Within larger asc tr uptrend: [pass/fail - reason]
 
 Overall: [1-2 sentence summary of decision]
