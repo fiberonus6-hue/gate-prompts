@@ -29,7 +29,7 @@ Wick breach rules:
 - If the total number of wick breaches across both trendlines is 3 or more — REJECT.
 Patterns that exceed these thresholds are structurally messy and crowd coordination is unreliable.
 
-TE10. TP REACHED?: NO FLAG TARGETS. Price must NOT have already reached, touched, or exceeded the measured move target. If TP has been touched, reached, or exceeded, the trade opportunity is gone. — REJECT.
+TE10. TP REACHED?: NO FLAG TARGETS/Q2 (HYPE-sh, LAB). Price must NOT have already reached, touched, or exceeded the measured move target. If TP has been touched, reached, or exceeded, the trade opportunity is gone. — REJECT.
 
 TE11. PUMP CHECK (6d8hr): No filter currently applied — field is recorded for tracking purposes only.
 
