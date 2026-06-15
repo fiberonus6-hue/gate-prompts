@@ -29,13 +29,15 @@ Wick breach rules:
 - If the total number of wick breaches across both trendlines is 3 or more — REJECT.
 Patterns that exceed these thresholds are structurally messy and crowd coordination is unreliable.
 
-TE10. TP REACHED?: NO FLAG TARGETS/Q2 (HYPE-sh, LAB). Price must NOT have already reached, touched, or exceeded the measured move target. If TP has been touched, reached, or exceeded, the trade opportunity is gone. — REJECT.
+TE10. BREAKOUT: Price must have broken out of the ascending triangle. If price has not broken out — REJECT.
 
-TE11. PUMP CHECK (6d8hr): No filter currently applied — field is recorded for tracking purposes only.
+TE11. TP REACHED?: NO FLAG TARGETS/Q2. Price must NOT have already reached, touched, or exceeded the measured move target. If TP has been touched, reached, or exceeded, the trade opportunity is gone. — REJECT.
 
-TE12. FIRST OCCURRENCE: Is this the first ever occurrence of this setup on this ticker? (yes/no) No filter currently applied — field is recorded for tracking purposes only.
+TE12. PUMP CHECK (6d8hr): Measure the percentage gain from the 6d8hr mark (counting back from the tip of the ascending triangle) to the tip of the ascending triangle. The pump must be greater than -20%. If the pump is -20% or worse — REJECT.
 
-TE13. WITHIN LARGER ASC TR UPTREND: Is the setup the first 3d asc tr (down) in the middle of an uptrend path of a larger 30-100d+ ascending triangle? If yes — REJECT. The 3d ascending triangle is forming within an uptrend of a larger structure and so the downside momentum won't be as strong.
+TE13. FIRST 3D ASC TR OFF PUMP: This must be the first 3d ascending triangle forming off the current rising pump. If a prior 3d ascending triangle has already formed and broken down in this same pump sequence (i.e., price pumped → 3d asc tr formed → price dropped → another 3d asc tr formed), the current setup is the second in the sequence and is invalid — REJECT. Only the first 3d ascending triangle off a pump is tradeable.
+
+TE14. WITHIN LARGER ASC TR / FALL W UPTREND: Is the setup the first 3d asc tr (down) in the middle of an uptrend path of a larger 30-100d+ ascending triangle or falling wedge? If yes — REJECT. The 3d ascending triangle is forming within an uptrend of a larger structure and so the downside momentum won't be as strong.
 
 EVALUATION INSTRUCTIONS:
 - Be strict. When in doubt, REJECT.
@@ -58,9 +60,10 @@ Days since token launch: [N/A]
 Setup Context: [pass/fail - reason]
 Setup Type: [N/A]
 Pattern Quality: [pass/fail/N/A - reason]
+Breakout: [pass/fail - reason]
 TP Reached?: [pass/fail - reason]
-Pump check (6d8hr): [N/A - recorded]
-First occurrence: [N/A - recorded]
-Within larger asc tr uptrend: [pass/fail - reason]
+Pump check (6d8hr): [pass/fail - reason]
+First 3d asc tr off pump: [pass/fail - reason]
+Within larger asc tr / fall w uptrend: [pass/fail - reason]
 
 Overall: [1-2 sentence summary of decision]
