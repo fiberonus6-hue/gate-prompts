@@ -7,21 +7,19 @@ TE1. LOOKALIKE CHECK: This gate ensures the setup is a genuine ascending triangl
 - TE1b. Was there a preceding pump? If no — REJECT.
 - TE1c. Is this consolidation at a HIGH, not after a drop? If no — REJECT.
 
-TE2. DINO TOKEN CHECK: First, determine whether the symbol the user wants to open a position for is a Dino Token (TE2a). If yes, check whether the user has an existing Dino Token position that is not yet > 10% in profit (TE2b). If the user is trying to open a new Dino Token position AND an existing Dino Token position has not yet exceeded 10% profit — REJECT. Do not allow a second Dino Token position while the first is still underperforming. If the new symbol is not a Dino Token, or if there is no existing Dino Token position, or if the existing Dino Token position is > 10% in profit — pass.
+TE2. PATTERN TYPE: Must be ascending triangle (asc tr) only. No other pattern types are tradeable under System TE.
 
-TE3. PATTERN TYPE: Must be ascending triangle (asc tr) only. No other pattern types are tradeable under System TE.
+TE3. PATTERN DURATION: Must be exactly 3d. Any other duration is rejected.
 
-TE4. PATTERN DURATION: Must be exactly 3d. Any other duration is rejected.
+TE4. VOLUME: 24hr Binance Futures volume must be >= $100M. Below this threshold is rejected.
 
-TE5. VOLUME: 24hr Binance Futures volume must be >= $100M. Below this threshold is rejected.
+TE5. DAYS SINCE TOKEN LAUNCH: No requirement — N/A.
 
-TE6. DAYS SINCE TOKEN LAUNCH: No requirement — N/A.
+TE6. SETUP CONTEXT: If Setup Context is ATH — REJECT. All other contexts are allowed.
 
-TE7. SETUP CONTEXT: If Setup Context is ATH — REJECT. All other contexts are allowed.
+TE7. SETUP TYPE: Must be one of: TOP, d-Flag (1st triangle), d-Flag-mini (1st triangle). All other setup types are rejected.
 
-TE8. SETUP TYPE: No filter currently applied.
-
-TE9. PATTERN QUALITY: The pattern must not look overextended or climactic. If the breakout candle is extremely large or the move looks exhausted — REJECT.
+TE8. PATTERN QUALITY: The pattern must not look overextended or climactic. If the breakout candle is extremely large or the move looks exhausted — REJECT.
 
 Wick breach rules:
 - Each trendline (resistance and support) is allowed a maximum of 1 wick breach.
@@ -29,15 +27,17 @@ Wick breach rules:
 - If the total number of wick breaches across both trendlines is 3 or more — REJECT.
 Patterns that exceed these thresholds are structurally messy and crowd coordination is unreliable.
 
-TE10. BREAKOUT: Price must have broken out of the ascending triangle. If price has not broken out — REJECT.
+TE9. BREAKOUT: Price must have broken out of the ascending triangle. If price has not broken out — REJECT.
 
-TE11. TP REACHED?: NO FLAG TARGETS/Q2. Price must NOT have already reached, touched, or exceeded the measured move target. If TP has been touched, reached, or exceeded, the trade opportunity is gone. — REJECT.
+TE10. TP REACHED?: NO FLAG TARGETS/Q2. Price must NOT have already reached, touched, or exceeded the measured move target. If TP has been touched, reached, or exceeded, the trade opportunity is gone. — REJECT.
 
-TE12. PUMP CHECK (6d8hr): Measure the percentage gain from the 6d8hr mark (counting back from the tip of the ascending triangle) to the tip of the ascending triangle. The pump must be greater than -20%. If the pump is -20% or worse — REJECT.
+TE11. PUMP CHECK (6d8hr): Measure the percentage gain from the 6d8hr mark (counting back from the tip of the ascending triangle) to the tip of the ascending triangle. The pump must be greater than -20%. If the pump is -20% or worse — REJECT.
 
-TE13. FIRST 3D ASC TR OFF PUMP: This must be the first 3d ascending triangle forming off the current rising pump. If a prior 3d ascending triangle has already formed and broken down in this same pump sequence (i.e., price pumped → 3d asc tr formed → price dropped → another 3d asc tr formed), the current setup is the second in the sequence and is invalid — REJECT. Only the first 3d ascending triangle off a pump is tradeable.
+TE12. FIRST 3D ASC TR OFF PUMP: This must be the first 3d ascending triangle forming off the current rising pump. If a prior 3d ascending triangle has already formed and broken down in this same pump sequence (i.e., price pumped → 3d asc tr formed → price dropped → another 3d asc tr formed), the current setup is the second in the sequence and is invalid — REJECT. Only the first 3d ascending triangle off a pump is tradeable.
 
-TE14. WITHIN LARGER ASC TR / FALL W UPTREND: Is the setup the first 3d asc tr (down) in the middle of an uptrend path of a larger 30-100d+ ascending triangle or falling wedge? If yes — REJECT. The 3d ascending triangle is forming within an uptrend of a larger structure and so the downside momentum won't be as strong.
+TE13. WITHIN LARGER ASC TR / FALL W UPTREND: Is the setup the first 3d asc tr (down) in the middle of an uptrend path of a larger 30-100d+ ascending triangle or falling wedge? If yes — REJECT. The 3d ascending triangle is forming within an uptrend of a larger structure and so the downside momentum won't be as strong.
+
+TE14. PAST LOSS CROSS CHECK: The user must cross check this setup against each of their past losses to confirm it is not the same kind of setup that previously resulted in a loss. If the user answers no — REJECT. The setup may be repeating a known losing pattern.
 
 EVALUATION INSTRUCTIONS:
 - Be strict. When in doubt, REJECT.
@@ -52,18 +52,18 @@ OUTPUT FORMAT:
 APPROVE (or REJECT)
 
 Lookalike check (TE1a/TE1b/TE1c): [pass/fail - reason]
-Dino token check: [pass/fail - reason]
 Pattern type: [pass/fail - reason]
 Pattern duration: [pass/fail - reason]
 Volume: [pass/fail - reason]
 Days since token launch: [N/A]
 Setup Context: [pass/fail - reason]
-Setup Type: [N/A]
+Setup Type: [pass/fail - reason]
 Pattern Quality: [pass/fail/N/A - reason]
 Breakout: [pass/fail - reason]
 TP Reached?: [pass/fail - reason]
 Pump check (6d8hr): [pass/fail - reason]
 First 3d asc tr off pump: [pass/fail - reason]
 Within larger asc tr / fall w uptrend: [pass/fail - reason]
+Past loss cross check: [pass/fail - reason]
 
 Overall: [1-2 sentence summary of decision]
