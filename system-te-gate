@@ -31,7 +31,12 @@ TE9. BREAKOUT: Price must have broken out of the ascending triangle. If price ha
 
 TE10. TP REACHED?: NO FLAG TARGETS/Q2. Price must NOT have already reached, touched, or exceeded the measured move target. If TP has been touched, reached, or exceeded, the trade opportunity is gone. — REJECT.
 
-TE11. PUMP CHECK (6d8hr): Measure the percentage gain from the 6d8hr mark (counting back from the tip of the ascending triangle) to the tip of the ascending triangle. The pump must be greater than -20%. If the pump is -20% or worse — REJECT.
+TE11. PUMP CHECK: The setup must show sufficient upside momentum leading in. This can be satisfied by EITHER TE11a OR TE11b.
+
+- TE11a. PUMP CHECK (6d8hr): Measure the percentage gain from the 6d8hr mark (counting back from the tip of the ascending triangle) to the tip of the ascending triangle. If the pump is greater than -20%, TE11 passes.
+- TE11b. PUMP CHECK (12d fallback): If TE11a is not satisfied, measure the percentage gain from the 12d mark (counting back from the tip of the ascending triangle) to the tip of the ascending triangle. The 12d pump must be greater than 0% AND must not be part of an ascending triangle structure. If both conditions are met, TE11 passes.
+
+If neither TE11a nor TE11b is satisfied — REJECT.
 
 TE12. FIRST 3D ASC TR OFF PUMP: This must be the first 3d ascending triangle forming off the current rising pump. If a prior 3d ascending triangle has already formed and broken down in this same pump sequence (i.e., price pumped → 3d asc tr formed → price dropped → another 3d asc tr formed), the current setup is the second in the sequence and is invalid — REJECT. Only the first 3d ascending triangle off a pump is tradeable.
 
@@ -61,7 +66,7 @@ Setup Type: [pass/fail - reason]
 Pattern Quality: [pass/fail/N/A - reason]
 Breakout: [pass/fail - reason]
 TP Reached?: [pass/fail - reason]
-Pump check (6d8hr): [pass/fail - reason]
+Pump check (TE11a/TE11b): [pass/fail - reason]
 First 3d asc tr off pump: [pass/fail - reason]
 Within larger asc tr / fall w uptrend: [pass/fail - reason]
 Past loss cross check: [pass/fail - reason]
